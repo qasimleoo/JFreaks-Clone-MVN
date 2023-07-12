@@ -1,0 +1,64 @@
+date=2023-07-12
+type=page
+title=Products
+status=published
+description=APIs
+keywords=
+canonical=http://127.0.0.1:5500/
+og_image='../assets/pics/fav-icon.png'
+~~~~~~
+<div class="our-products">
+    <div id="container">
+        <div class="container">
+            <h2 class=""><span id="time"></span></h2>
+        </div>
+    </div>
+
+    <h2>Our Products</h2>
+    <hr id="products-hr">
+    <ul class="product-list">
+        <li>
+            <a class="alignProducts" href="ipLocation.html">
+                <div class="vl"></div>
+                <i class="fa-solid fa-location-dot" style="color: #f12ff2; hover{color: aliceblue;};"></i>
+                <p id="ipgeolocation">ipgeolocation</p>
+            </a>
+            <p class="products-desc">IP Intelligence Stack with IP to Geolocation, Timezone and Astronomy API</p>
+        </li>
+        <li>
+            <a class="alignProducts" href="whois.html">
+                <div class="vl"></div>
+                <i class="fa-solid fa-database" style="color: #23377f;"></i>
+                <p id="WhoisFreaks">WhoisFreaks</p>
+            </a>
+            <p class="products-desc">Best Source For Domain WHOIS Database and API</p>
+        </li>
+        <li>
+            <a class="alignProducts" href="convertor.html">                        
+                <div class="vl"></div>
+                <i class="fa-solid fa-rupee-sign" style="color: #821e1f;"></i>
+                <p id="CurrencyFreaks">CurrencyFreaks</p>
+            </a>
+            <p class="products-desc">Currency Conversion and Forex Exchange Rate API</p>
+        </li>
+    </ul>
+</div>
+
+<script>    
+
+    // Products Sample Time
+    localTime = () =>{
+        a = new Date();
+        const options = {weekday : 'long', year: 'numeric', month:'long', day:'numeric'};
+        
+        let time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+        let date = a.toLocaleDateString(undefined, options);
+
+        document.getElementById('time').innerHTML = time + ' on ' + date;
+    }
+
+    setInterval(localTime, 1000);
+    // ------------------------------------
+
+
+</script>

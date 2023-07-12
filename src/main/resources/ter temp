@@ -1,0 +1,136 @@
+*   [33mbe47135[m[33m ([m[1;36mHEAD -> [m[1;32mtemp[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge branch 'issue/errorPage-footer' into 'master'
+[31m|[m[32m\[m  
+[31m|[m * [33m59cbd2b[m[33m ([m[1;31morigin/issue/errorPage-footer[m[33m)[m footer issue solved and evie.css version updates
+[31m|[m * [33m56aae3d[m notFound template and page is updated
+[31m|[m[31m/[m  
+*   [33m4309425[m[33m ([m[1;32mmaster[m[33m)[m Merge branch 'update/404page' into 'master'
+[33m|[m[34m\[m  
+[33m|[m * [33mb493453[m[33m ([m[1;31morigin/update/404page[m[33m)[m 404 contact updated, update 404 page to responsive, version of evie.css are updated
+[33m|[m[33m/[m  
+*   [33m799f264[m Merge branch 'issue/updates/errorPage' into 'master'
+[35m|[m[36m\[m  
+[35m|[m * [33mb71407e[m version updated
+[35m|[m * [33m1026ad5[m 404 error text stylying is modified, and responsive
+[35m|[m * [33mf20664e[m not-found.html moved into responsive page
+[35m|[m * [33m9d2b66c[m evie.css version updated
+[35m|[m * [33m0478a61[m notFound template updated, not-found.html designed, evie.css updatd
+[35m|[m * [33mf008ac0[m htaccess and not-found file edited
+[35m|[m[35m/[m  
+*   [33me594846[m Merge branch 'issue/404error' into 'master'
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33me2c3e0b[m[33m ([m[1;31morigin/issue/404error[m[33m)[m minor changes
+[1;31m|[m * [33m4c3c644[m template created, image, not found page updated
+[1;31m|[m * [33m09b506c[m resolve 404 error
+* [1;32m|[m   [33mfbfe4d9[m Merge branch 'issue/trustedByLogos' into 'master'
+[1;32m|[m[1;34m\[m [1;32m\[m  
+[1;32m|[m [1;34m|[m[1;32m/[m  
+[1;32m|[m[1;32m/[m[1;34m|[m   
+[1;32m|[m * [33mbcc3f37[m[33m ([m[1;31morigin/issue/trustedByLogos[m[33m)[m versionized the all css files
+[1;32m|[m * [33mafc90f7[m redeigned the html code of trusted by logos
+[1;32m|[m * [33m2815ef2[m Redesigned the css of Trusted by logos
+[1;32m|[m[1;32m/[m  
+*   [33m4ed3079[m Merge branch 'issue/pageNamesCap' into 'master'
+[1;35m|[m[1;36m\[m  
+[1;35m|[m * [33mcbec24a[m applied a thymeleaf condition to block confirm.html page in xml file
+[1;35m|[m * [33mf6da07a[m renamed some pages removed capitalizations on pages name
+[1;35m|[m * [33mf9f0709[m applied a meta tag on this to avoid crawling by robots of this page
+[1;35m|[m * [33madba2d4[m renamed this page Failed to failed
+* [1;36m|[m   [33m2e832bd[m Merge branch 'changes' into 'master'
+[1;36m|[m[32m\[m [1;36m\[m  
+[1;36m|[m [32m|[m[1;36m/[m  
+[1;36m|[m[1;36m/[m[32m|[m   
+[1;36m|[m * [33m5ae8ec5[m two meta tags added in home's head
+[1;36m|[m * [33mfae3fcd[m <noscript> code added right after starting body tag
+[1;36m|[m * [33m103561b[m script added in head tag
+* [32m|[m   [33m601f864[m[33m ([m[1;31morigin/updates/documentation/menu[m[33m)[m Merge branch 'changesInDocumention' into 'master'
+[32m|[m[34m\[m [32m\[m  
+[32m|[m [34m|[m[32m/[m  
+[32m|[m[32m/[m[34m|[m   
+[32m|[m * [33m24aa5b5[m evie.css version and menu template updated
+[32m|[m * [33m4775aa4[m minify evie.css and minor changes
+[32m|[m * [33md39990e[m products added in footer and footer is updated
+[32m|[m * [33md8b5f56[m minor changes in pricing page
+[32m|[m * [33m7c6412c[m reomove overview md file and linked with documentation.html
+[32m|[m[32m/[m  
+*   [33mcb67e96[m Merge branch 'sitemapGeneration' into 'master'
+[35m|[m[36m\[m  
+[35m|[m * [33m9f9a287[m apply versioning on trusted_by images
+[35m|[m * [33mce2e0da[m updates the home.css versions in all html and templates
+[35m|[m * [33m001d157[m minify home.css
+[35m|[m * [33mbad290b[m update the opacity of trusted by images
+[35m|[m * [33m92ea497[m edit the tooltip of iploaction page
+[35m|[m * [33mbac4d6d[m define template for sitemap.xml and render it in peroperties
+[35m|[m * [33m4f13dd4[m footer updated and change the name of sitemap.html to site_navigation.html
+[35m|[m[35m/[m  
+*   [33m6d12835[m Merge branch 'blogLineIssue' into 'master'
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33mc3d9f59[m solve the blogs hr line issue
+[1;31m|[m[1;31m/[m  
+*   [33m90bd878[m Merge branch 'toggleIssue' into 'master'
+[1;33m|[m[1;34m\[m  
+[1;33m|[m * [33m4add281[m solved toggle issue on signup & modified some css
+[1;33m|[m[1;33m/[m  
+*   [33m7c18ef9[m Merge branch 'issue/sBtn' into 'master'
+[1;35m|[m[1;36m\[m  
+[1;35m|[m *   [33m76d8d25[m Merge branch 'issue/sBtn' of gitlab.com:ipgeolocation/ipgeolocation-web-jbake into issue/sBtn
+[1;35m|[m [31m|[m[1;35m\[m  
+[1;35m|[m [31m|[m[1;35m/[m  
+[1;35m|[m[1;35m/[m[31m|[m   
+* [31m|[m   [33m95dc9eb[m[33m ([m[1;31morigin/issue/Btn&TrustedBy[m[33m)[m Merge branch 'issue/sBtn' into 'master'
+[33m|[m[34m\[m [31m\[m  
+[33m|[m [34m|[m * [33m0c11783[m solved some css issues
+[33m|[m [34m|[m[34m/[m  
+[33m|[m * [33m83682de[m changed the position of trusted by heading after @media tag
+[33m|[m * [33m205456e[m updated the versions of all CSS files
+[33m|[m * [33mc4439d6[m changed the places location of search button in html code
+[33m|[m * [33mbbc8458[m redesigned the css of search button of both pages index & ipDetail
+[33m|[m[33m/[m  
+*   [33ma4a6f03[m Merge branch 'changes/ipgeolocationPage' into 'master'
+[35m|[m[36m\[m  
+[35m|[m * [33m8cb44da[m updates the version of home.css
+[35m|[m * [33m0517fe6[m lable and search image updated
+[35m|[m[35m/[m  
+*   [33m36bfecc[m Merge branch 'issueSerachImageIpGeolocation' into 'master'
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33m07e54e2[m change in tooltip of ipgeolocation page
+* [1;32m|[m   [33m799b258[m Merge branch 'issue/navbar' into 'master'
+[1;32m|[m[1;34m\[m [1;32m\[m  
+[1;32m|[m [1;34m|[m[1;32m/[m  
+[1;32m|[m[1;32m/[m[1;34m|[m   
+[1;32m|[m * [33mc2ccd73[m solved the navbar active class issue
+[1;32m|[m[1;32m/[m  
+*   [33mf87e6a9[m Merge branch 'devIU' into 'master'
+[1;35m|[m[1;36m\[m  
+[1;35m|[m *   [33m869f95a[m minor changes
+[1;35m|[m [31m|[m[32m\[m  
+[1;35m|[m [31m|[m * [33mee204eb[m -
+[1;35m|[m * [32m|[m [33mf20c5b7[m minor changes
+[1;35m|[m[1;35m/[m [32m/[m  
+* [32m|[m   [33m3f0427f[m Merge branch 'devIU'
+[33m|[m[34m\[m [32m\[m  
+[33m|[m * [32m\[m   [33m9ded96a[m Merged to master
+[33m|[m [32m|[m[36m\[m [32m\[m  
+[33m|[m [32m|[m [36m|[m[32m/[m  
+[33m|[m [32m|[m[32m/[m[36m|[m   
+[33m|[m * [36m|[m [33m51cfa91[m heading change in .md file
+[33m|[m * [36m|[m [33mab8d6cc[m opacity changed of trusted by div
+[33m|[m * [36m|[m [33m6d8bc3e[m minor changes
+[33m|[m * [36m|[m   [33m66e184b[m images are added in blogs page's maekdown file
+[33m|[m [1;31m|[m[1;32m\[m [36m\[m  
+[33m|[m [1;31m|[m * [36m|[m [33m72c7d44[m added signup template to validate its form correctly
+[33m|[m * [1;32m|[m [36m|[m [33m27dc237[m images added in blog page's markdown file
+[33m|[m [1;32m|[m[1;32m/[m [36m/[m  
+[33m|[m * [36m|[m [33ma81e683[m set the dates on blog page
+[33m|[m * [36m|[m [33m1d52b24[m all .md files are updated
+[33m|[m * [36m|[m [33m943e0a2[m documentation updates
+[33m|[m * [36m|[m   [33m1954b69[m Merge branch 'devIU' of gitlab.com:ipgeolocation/ipgeolocation-web-jbake into devIU
+[33m|[m [1;33m|[m[1;34m\[m [36m\[m  
+[33m|[m * [1;34m|[m [36m|[m [33m2790f7e[m removed the search bar position issue on mobile. shorten the label text
+[33m|[m * [1;34m|[m [36m|[m [33mf635956[m increased the accessibility 87 to 100% of ip detail page. & added label
+* [1;34m|[m [1;34m|[m [36m|[m [33m75b3567[m JS minify
+* [1;34m|[m [1;34m|[m [36m|[m [33ma4b1cfb[m Minor update
+* [1;34m|[m [1;34m|[m [36m|[m [33m7087395[m Version update
+* [1;34m|[m [1;34m|[m [36m|[m [33me7321a5[m Minor update
+[36m|[m [1;34m|[m[36m_[m[1;34m|[m[36m/[m  
+[36m|[m[36m/[m[1;34m|[m [1;34m|[m   
+* [1;34m|[m [1;34m|[m [33mc8b3cb3[m Minor update

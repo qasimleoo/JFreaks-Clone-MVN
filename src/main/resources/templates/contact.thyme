@@ -1,0 +1,93 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en-US">
+<head th:replace="header.thyme::mainHead"/>
+<style>
+    .invalid {
+        border-color: red;
+    }
+
+    #nameError {
+        color: red;
+        font-size: medium;
+    }
+
+    #passwordError {
+        color: red;
+        font-size: medium;
+    }
+
+    #emailError {
+        color: red;
+        font-size: medium;
+    }
+
+    #msgError {
+        color: red;
+        font-size: medium;
+    }
+
+    #phoneError {
+        color: red;
+        font-size: medium;
+    }
+</style>
+<body >
+	<noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVHL697" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+<div th:replace="menu.thyme::menu-inner-pages"/>
+<div class="app__main" th:utext='${content.body}'>body</div>
+<div th:replace="footer.thyme::footer"></div>
+<div th:replace="footer.thyme::captchaFooter"></div>
+<script>
+userName.onblur = function () {
+    if (userName.value == "") {
+        userName.classList.add('invalid');
+        nameError.innerHTML = 'Please enter your name first.'
+    }
+};
+userName.onfocus = function () {
+    if (userName.classList.contains('invalid')) {
+        userName.classList.remove('invalid');
+        nameError.innerHTML = "";
+    }
+};
+userEmail.onblur = function () {
+    if (!userEmail.value.includes('@')) {
+        userEmail.classList.add('invalid');
+        emailError.innerHTML = 'Please enter a correct email.'
+    }
+};
+userEmail.onfocus = function () {
+    if (userEmail.classList.contains('invalid')) {
+        userEmail.classList.remove('invalid');
+        emailError.innerHTML = "";
+    }
+};
+userPhone.onblur = function () {
+    if (userPhone.value == "") {
+        userPhone.classList.add('invalid');
+        phoneError.innerHTML = 'Please enter phone/mobile number.'
+    }
+};
+userPhone.onfocus = function () {
+    if (userPhone.classList.contains('invalid')) {
+        userPhone.classList.remove('invalid');
+        phoneError.innerHTML = "";
+    }
+};
+userMessage.onblur = function () {
+    if (userMessage.value == "") {
+        userMessage.classList.add('invalid');
+        msgError.innerHTML = 'Please write your message/feedback.'
+    }
+};
+userMessage.onfocus = function () {
+    if (userMessage.classList.contains('invalid')) {
+        userMessage.classList.remove('invalid');
+        msgError.innerHTML = "";
+    }
+};
+</script>
+</body>
+</html>

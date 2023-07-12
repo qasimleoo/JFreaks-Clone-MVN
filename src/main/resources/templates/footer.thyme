@@ -1,0 +1,94 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<body>
+        <div th:fragment="footer">
+            <div class="foot-panel1">
+            <a href="index.html">back to top</a> 
+        </div>
+
+        <div class="foot-panel2" id="lists">
+            <ul class="foot-ul" id="foot-panel2-col1">
+                <p>Get to know Us</p>
+                <a href="#">Careers</a>
+                <a href="#">Blogs</a>
+                <a href="#">About JFreaks</a>
+                <a href="#">Investor Relations</a>
+                <a href="#">JFreaks Devices</a>
+                <a href="#">JFreaks Science</a>
+                <a href="#">Careers</a>
+                <a href="#">Blogs</a>
+                <a href="#">About JFreaks</a>
+
+                <div class="footerIcons">
+                    <a href="" class="footerIconsIn"><i class="fa-brands fa-instagram" style="hover{color: aliceblue;}; font-size: 25px;"></i></a>
+                    <a href="" class="footerIconsIn"><i class="fa-brands fa-facebook" style="hover{color: aliceblue;}; font-size: 25px;"></i></a>
+                    <a href="" class="footerIconsIn"><i class="fa-brands fa-discord" style="hover{color: aliceblue;}; font-size: 25px;"></i></a>
+                    <a href="" class="footerIconsIn"><i class="fa-brands fa-twitter" style="hover{color: aliceblue;}; font-size: 25px;"></i></a>            
+                    <a href="" class="footerIconsIn"><i class="fa-brands fa-linkedin" style="hover{color: aliceblue;}; font-size: 25px;"></i></a>
+                    <a href="" class="footerIconsIn"><i class="fa-solid fa-envelope-open-text" style="hover{color: aliceblue;}; font-size: 25px;"></i></a>
+                </div>
+        
+            </ul>
+
+            <ul class="foot-ul" id="foot-panel2-col2">
+                <p>Get to know Us</p>
+                <a href="#">Careers</a>
+                <a href="#">Blogs</a>
+                <a href="#">About JFreaks</a>
+                <a href="#">Investor Relations</a>
+                <a href="#">JFreaks Devices</a>
+                <a href="#">JFreaks Science</a>
+            </ul>
+
+            <ul class="foot-ul" id="foot-panel2-col3">
+                <p>Get to know Us</p>
+                <a href="#">Careers</a>
+                <a href="#">Blogs</a>
+                <a href="#">About JFreaks</a>
+                <a href="#">Investor Relations</a>
+                <a href="#">JFreaks Devices</a>
+                <a href="#">JFreaks Science</a>
+                <a href="#">Careers</a>
+                <a href="#">About JFreaks</a>
+            </ul>
+
+            <ul class="foot-ul" id="foot-panel2-col4">
+                <p>Get to know Us</p>
+                <a href="#">Careers</a>
+                <a href="#">Blogs</a>
+                <a href="#">About JFreaks</a>
+                <a href="#">Careers</a>
+                <a href="#">Blogs</a>
+                <a href="#">About JFreaks</a>
+                <a href="#">Careers</a>
+                <a href="#">Blogs</a>
+                <a href="#">About JFreaks</a>
+                <a href="#">Investor Relations</a>
+                <a href="#">Careers</a>
+                <a href="#">Blogs</a>
+                <a href="#">About JFreaks</a>
+                <a href="#">JFreaks Devices</a>
+                <a href="#">JFreaks Science</a>
+            </ul>
+        </div>
+        
+        <div class="foot-panel3">
+            <div class="logo"></div>
+        </div>
+
+        <div class="foot-panel4">
+            <div class="pages">
+                <a href="#">Conditions of Use</a>
+                <a href="#">Privacy Notice</a>
+                <a href="#">Your Ads Privacy</a>
+            </div>
+
+            <div class="copyright">
+                <p class="endMargin">Copyright &copy 2023 JFreaks Software Solutions LLC</p>
+                <p class="endMargin">2010 NE 182 Pl Unit #138 Citra, FL 32113, United States</p>
+                <p class="endMargin">Phone No: +1 (405) 418-6847</p>
+            </div>
+
+        </div>
+  	</body>
+</html>

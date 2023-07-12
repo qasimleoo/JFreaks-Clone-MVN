@@ -1,0 +1,86 @@
+date=2023-07-12
+type=page
+title=Domain Info
+status=published
+description=APIs
+keywords=
+canonical=http://127.0.0.1:5500/
+og_image='../assets/pics/fav-icon.png'
+~~~~~~
+
+<!-- content STARTS here  -->
+<section>
+    <!-- Add your homepage content here -->        
+    <div id="content">
+        <div class="geolocationDesign">
+            <h2>Domain Access (whoIsAPI)</h2>
+            <div class="domain-access">
+            <label for="domainName">Domain Name:</label>
+            <input type="text" id="domainName" placeholder="Enter domain name">
+
+            <button onclick="accessDomain()">Access</button>
+            <div id="domainResult"></div>
+        </div>
+    </div>
+
+    </div>        
+</section>
+<!-- content/section ENDS here  -->
+
+<script>
+// Fetch domain information from the Whois API
+function fetchDomainInfo(domainName) {
+    var apiKey = '1feb18895b62431a9c6da81c0d9a159a';
+
+    let str = 'whois.com';
+    const myArray = str.split(".");
+    let word = myArray[0];
+    
+    var url = `https://api.whoisfreaks.com/v1.0/whois?apiKey=${apiKey}&${word}=live&domainName=${domainName}`;
+    
+    return fetch(url)
+      .then(response => response.json());
+  }
+  
+  // Perform domain access
+  function accessDomain() {
+    var domainName = document.getElementById('domainName').value;
+    
+    // Fetch domain information
+    fetchDomainInfo(domainName)
+      .then(data => {
+        // Display the result
+        displayDomainInfo(data);
+      })
+      .catch(error => {
+        console.log('Error fetching domain information:', error);
+      });
+  }
+  
+  // Display the domain information
+  function displayDomainInfo(data) {
+    var resultDiv = document.getElementById('domainResult');
+    resultDiv.innerHTML = '';
+  
+    var table = document.createElement('table');
+    table.classList.add('domain-info-table');
+  
+    for (var key in data) {
+      var row = document.createElement('tr');
+      var keyCell = document.createElement('td');
+      var valueCell = document.createElement('td');
+  
+      keyCell.textContent = key;
+      valueCell.textContent = data[key];
+  
+      row.appendChild(keyCell);
+      row.appendChild(valueCell);
+  
+      table.appendChild(row);
+    }
+  
+    resultDiv.appendChild(table);
+  }
+  
+
+</script>

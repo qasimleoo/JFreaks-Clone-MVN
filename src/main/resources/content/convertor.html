@@ -1,0 +1,124 @@
+date=2023-07-12
+type=page
+title=Convertor
+status=published
+description=APIs
+keywords=
+canonical=http://127.0.0.1:5500/
+og_image='../assets/pics/fav-icon.png'
+~~~~~~
+<!-- Add your homepage content here -->        
+<div id="content">
+    <div class="our-products">
+        <h2>Currency Converter (Currency Freaks)</h2>
+        <div class="converter">
+            <label for="fromCurrency">From:</label>
+            <select id="fromCurrency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="AUD">AUD</option>
+                <option value="GBP">GBP</option>
+                <option value="CAD">CAD</option>
+                <option value="INR">INR</option>
+                <option value="PKR">PKR</option>
+                <option value="QAR">QAR</option>
+                <option value="SAR">SAR</option>
+                <option value="KRW">KRW</option>
+                <option value="TRY">TRY</option>
+                <option value="AED">AED</option>
+                <option value="LKR">LKR</option>
+
+                <!-- Add more currency options as needed -->
+            </select>
+
+            <label for="toCurrency">To:</label>
+            <select id="toCurrency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="AUD">AUD</option>
+                <option value="GBP">GBP</option>
+                <option value="CAD">CAD</option>
+                <option value="INR">INR</option>
+                <option value="PKR">PKR</option>
+                <option value="QAR">QAR</option>
+                <option value="SAR">SAR</option>
+                <option value="KRW">KRW</option>
+                <option value="TRY">TRY</option>
+                <option value="AED">AED</option>
+                <option value="LKR">LKR</option>
+                <!-- Add more currency options as needed -->
+            </select>
+
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" placeholder="Enter amount">
+
+            <button onclick="convert()">Convert</button>
+
+            <div id="result"></div>
+        </div>
+    </div>
+    <script>
+        // API Accesses 
+        // ------------------------------------
+        // Currency Rates Conversion/Convertor
+        function fetchCurrencyRates() {
+        var apiKey = '3a600990cc3c4ae6ad4e55f2d4074091';
+        
+        var url = `https://api.currencyfreaks.com/v2.0/rates/latest?apikey=${apiKey}`;
+        
+        return fetch(url)
+            .then(response => response.json())
+            .then(data => data.rates);
+        }
+
+        // Populate currency options in the select elements
+        function populateCurrencyOptions(rates) {
+        var fromCurrencySelect = document.getElementById('fromCurrency');
+        var toCurrencySelect = document.getElementById('toCurrency');
+        
+        for (var currency in rates) {
+            var fromOption = new Option(currency, currency);
+            var toOption = new Option(currency, currency);
+            
+            fromCurrencySelect.add(fromOption);
+            toCurrencySelect.add(toOption);
+        }
+        }
+
+        // Perform the currency conversion/convertor
+        function convert() {
+        var fromCurrency = document.getElementById('fromCurrency').value;
+        var toCurrency = document.getElementById('toCurrency').value;
+        var amount = parseFloat(document.getElementById('amount').value);
+        
+        // Fetch currency rates and perform the conversion
+        fetchCurrencyRates()
+            .then(rates => {
+            var result = performConversion(fromCurrency, toCurrency, amount, rates);
+
+            if(result > 0){
+                // Display the result
+                document.getElementById('result').textContent = `${amount} ${fromCurrency} = ${result.toFixed(2)} ${toCurrency}`;
+            }
+            else{
+                document.getElementById('result').textContent = `Please enter an amount greater than 0`;
+            }
+            
+            })
+            .catch(error => {
+            console.log('Error fetching currency rates:', error);
+            });
+        }
+
+        // Perform the currency conversion based on the rates
+        function performConversion(fromCurrency, toCurrency, amount, rates) {
+        var fromRate = rates[fromCurrency];
+        var toRate = rates[toCurrency];
+        
+        var convertedAmount = (amount / fromRate) * toRate;
+        
+        return convertedAmount;
+        }
+
+    </script>
+</div>

@@ -1,0 +1,162 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+        <div th:fragment="menu-inner-pages">
+        <!--Java Script-->
+            <div class="navbarBehind"></div>
+            
+            <div class="navbar">
+                <div class="nav-logo border">
+                    <a href="">
+                        <div class="logo"></div>
+                    </a>
+                </div>
+
+                <div class="home border menu-bar">
+                    <a th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')" th:href="${rootpath}+'index.html'" class="otherPages">
+                        <i class="fa-solid fa-house" style="color: #bdd440;"></i>
+                        <p class="nav-second">Home</p>
+                    </a>
+                </div>
+                
+                <div class="nav-width-manager">
+                </div>
+                <div class="nav-search">
+                    <select class="search-select" id="">
+                        <option value="">All</option>
+                        <option value="">Home</option>
+                        <option value="">Copyright</option>
+                        <option value="">Products</option>
+                        <option value="">Location</option>
+
+                    </select>
+                    <input class="search-input" id="searchInput" type="text" placeholder=" Search JFreaks"/>
+                    <div class="search-icon" id="searchBtn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+
+                <div class="aboutUs border menu-bar">
+                    <a th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')" th:href="${rootpath}+'about.html'" class="otherPages">
+                        <i class="fa-solid fa-users" style="color: #bdd440;"></i>
+                        <p class="nav-second">About Us</p>
+                    </a>
+                </div>
+                        
+                <a href="#" class="menu-bar">
+                    <i class="fa-solid fa-up-right-from-square" style="color: #bdd440;"></i>
+                    <select onchange="location = this.value;" class="nav-second geoNavSelect" >
+
+                        <option value="#">Products</option>
+                        <option value="products.html">Page</option>
+                        <option value="convertor.html">Currency Convertor</option>
+                        <option value="whois.html">whois API</option>
+                        <option value="ipLocation.html">ip Location Tracker</option>
+                    </select>
+                </a>
+                
+                <div class="nav-language border">
+                    <div class="language-icon">
+                        <img width="25" height="25" src="https://img.icons8.com/color/48/pakistan.png"  style="margin-right: 5px;" alt="pakistan"/>
+                    </div>
+                    <select class="laguage-select" id="">
+                        <option value="">EN</option>
+                        <option value="">UR</option>
+                        <option value="">HI</option>
+                    </select>
+                </div>
+
+                <div class="navbar-toggler" onclick="toggleMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+
+            </div>
+
+        <script>            
+            // ------------------------------------
+            // Search Function 
+            function searchAndHighlight() {
+                // Get the search input value
+                var searchInput = document.getElementById('searchInput').value.trim();
+
+                // Get the container element where the text will be searched
+                var container = document.getElementById('bodyAll');
+
+                // Remove previous highlighting
+                var highlightedElements = container.getElementsByClassName('highlightClass');
+                for (var i = 0; i < highlightedElements.length; i++) {
+                    var element = highlightedElements[i];
+                    element.classList.remove('highlightClass');
+                    // element.classList.add('unHighlight');
+                }
+
+                // Check if search input is not empty
+                if (searchInput !== '') {
+                    // Create a regular expression using the search input as pattern and 'gi' as flags (global and case-insensitive)
+                    var regex = new RegExp(searchInput, 'gi');
+
+                    // Iterate through each text node inside the container element
+                    var textNodes = getTextNodesIn(container);
+                    for (var j = 0; j < textNodes.length; j++) {
+                        var node = textNodes[j];
+                        var text = node.nodeValue;
+                        var matches = text.match(regex);
+
+                        if (matches) {
+                            // Replace each match with highlighted text
+                            var replacedText = text.replace(regex, function (match) {
+                                return '<span class="highlightClass">' + match + '</span>';
+                            });
+
+                            // Create a temporary div element to hold the replaced text
+                            var tempDiv = document.createElement('div');
+                            tempDiv.innerHTML = replacedText;
+
+                            // Replace the original text node with the modified HTML
+                            while (tempDiv.firstChild) {
+                                node.parentNode.insertBefore(tempDiv.firstChild, node);
+                            }
+                            node.parentNode.removeChild(node);
+                        }
+                    }
+                }
+            }
+
+            // Helper function to get all text nodes inside an element
+            function getTextNodesIn(node) {
+                var textNodes = [];
+
+                function getTextNodes(node) {
+                    if (node.nodeType === Node.TEXT_NODE) {
+                        textNodes.push(node);
+                    } else {
+                        var children = node.childNodes;
+                        for (var k = 0; k < children.length; k++) {
+                            getTextNodes(children[k]);
+                        }
+                    }
+                }
+                
+                getTextNodes(node);
+                return textNodes;
+            }
+
+            document.getElementById('searchBtn').addEventListener('click', searchAndHighlight);
+            // ------------------------------------
+
+            // ---------------------------------
+            // Toggler 
+            function toggleMenu() {
+                var menu = document.querySelector('.menu');
+                menu.classList.toggle('active');
+            }
+
+        </script>
+
+    </div>
+
+</body>
+</html>
