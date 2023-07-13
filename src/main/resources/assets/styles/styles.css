@@ -65,19 +65,21 @@
     width: 130px;
 }
 
-.form-input{
+.form-input {
     padding: 10px;
     background-color: #222f3d;
     color: white;
 }
 
-.form-input-button{
+.form-input-button {
     padding: 10px;
     background-color: #222f3d;
     color: white;
 }
 
-#amount, #ipAddress, #domainName{
+#amount,
+#ipAddress,
+#domainName {
     background-color: #222f3d;
     color: white;
     padding-left: 10px;
@@ -106,6 +108,7 @@
 
 .border {
     border: 2px solid transparent;
+    text-decoration: none;
 }
 
 .border:hover {
@@ -244,7 +247,7 @@ span {
     display: block;
 } */
 
-.overlay-link-1{
+.overlay-link-1 {
     margin-top: 18px;
     color: #bbdd41;
     font-size: 14px;
@@ -253,19 +256,20 @@ span {
     /* text-align: center; */
 }
 
-.overlay-link-1:hover{
+.overlay-link-1:hover {
     color: white;
     font-size: 15px;
 }
 
-.overlay-link-1 a p{
+.overlay-link-1 a p {
     /* font-size: 14px; */
     margin-left: 12px;
 }
 
-hr{
+hr {
     margin: 10px;
 }
+
 /* Header ends here */
 
 
@@ -438,7 +442,7 @@ hr{
     /* text-align: center; */
 }
 
-.productsBox{
+.productsBox {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -470,7 +474,7 @@ hr{
     justify-content: center;
 }
 
-.products-content{
+.products-content {
     margin: 5px;
     padding: 10px;
     display: flex;
@@ -828,7 +832,7 @@ align-items: center; */
     padding: 20px;
 }
 
-.ipResult{
+.ipResult {
     overflow: auto;
     padding-left: 150px;
     padding-right: 150px;
@@ -868,16 +872,23 @@ align-items: center; */
 }
 
 .geolocation-table {
-    margin-top: 15px;
+    margin-top: 10px;
     border-collapse: collapse;
-    width: 100%;
-    margin-bottom: 50px;
-
+    width: 200px;
+    margin-bottom: 40px;
+    /* padding-left: 10px; */
+    background-color: #222f3d;
+    color: white;
+    /* border-color: blanchedalmond; */
+    border: 10px groove #bdd440;
 }
 
 .geolocation-table td {
     padding: 5px;
-    border: 2px solid #0f0900;
+    border: 1px solid #e3e3e3;
+    width: 100px;
+    /* Set your desired width here */
+    word-wrap: break-word;
 }
 
 /* Domain accesss for Who is  */
@@ -905,47 +916,111 @@ align-items: center; */
 
 .domain-info-table {
     margin-top: 10px;
-    /* border-collapse: collapse; */
+    border-collapse: collapse;
     width: 200px;
     margin-bottom: 40px;
     /* padding-left: 10px; */
+    background-color: #222f3d;
+    color: white;
+    /* border-color: blanchedalmond; */
+    border: 10px groove #bdd440;
 
 }
 
 .domain-info-table td {
     padding: 5px;
-    border: 1px solid #000000;
-    width: 100px; /* Set your desired width here */
+    border: 1px solid #e3e3e3;
+    width: 100px;
+    /* Set your desired width here */
     word-wrap: break-word;
 }
 
 .domainResult {
     overflow: auto;
-    padding-left: 150px;
+    /* padding-left: 150px; */
     padding-right: 150px;
     padding-top: 50px;
     background-color: #B9CED1;
     /* width: 70%; */
+    
+}
+
+
+.innerDomainResultContainer{
+    width: 80vw;
+    margin-top: 50px;
+}
+
+.domainResultContainer{
+    background-color: #B9CED1;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Loader  */
+
+/* Loader styles */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.99);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader {
+    border: 7px solid #f3f3f3;
+    border-top: 7.5px solid #bbdd40;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(900deg);
+    }
+}
+
+/* Content styles */
+#content {
+    display: none;
+    /* Hide content initially */
+}
+
+.productsSelectUnderLineHide{
+    text-decoration: none;
 }
 
 @media (min-width:801px) {
-    .navbar-toggler{
+    .navbar-toggler {
         display: none;
     }
 }
 
-@media (max-width: 1440px){
-    .box-content p{
+@media (max-width: 1440px) {
+    .box-content p {
         font-size: 11px;
     }
 
-    .box-content a{
+    .box-content a {
         font-size: 11px;
     }
 }
 
 @media (max-width: 1100px) {
-    .nav-search{
+    .nav-search {
         display: none;
     }
 
@@ -956,52 +1031,56 @@ align-items: center; */
         width: 150px;
     }
 
-    .box-content h3{
+    .box-content h3 {
         font-size: 16px;
     }
 
-    .alignProducts p{
+    .alignProducts p {
         font-size: 22px;
     }
 
-    .products-desc{
+    .products-desc {
         font-size: 13px;
     }
 
-    #foot-panel2-col4{
+    #foot-panel2-col4 {
         display: none;
     }
 
-    .about-box-content h3{
+    .about-box-content h3 {
         font-size: 19px;
     }
-    
-    .about-box-content p{
+
+    .about-box-content p {
         font-size: 15px;
     }
 
 }
 
-@media (max-width: 900px){
-    #foot-panel2-col4, #foot-panel2-col3{
+@media (max-width: 900px) {
+
+    #foot-panel2-col4,
+    #foot-panel2-col3 {
         display: none;
     }
 
-    .about-box-content h3{
+    .about-box-content h3 {
         font-size: 18px;
     }
-    
-    .about-box-content p{
+
+    .about-box-content p {
         font-size: 14px;
     }
 }
 
-@media (max-width: 800px){
-    #foot-panel2-col4, #foot-panel2-col3{
+@media (max-width: 800px) {
+
+    #foot-panel2-col4,
+    #foot-panel2-col3 {
         display: none;
     }
 
-    .menu-bar{
+    .menu-bar {
         display: none;
     }
 
@@ -1019,61 +1098,66 @@ align-items: center; */
         margin-top: 60px;
     }
 
-    .fa-brands{
+    .fa-brands {
         font-size: 20px;
         display: flex;
         flex-wrap: wrap;
     }
-    .about-box-content h3{
+
+    .about-box-content h3 {
         font-size: 17px;
     }
-    
-    .about-box-content p{
+
+    .about-box-content p {
         font-size: 13px;
     }
 
-    .our-products h2{
+    .our-products h2 {
         font-size: 24px;
     }
 
-    
-    .geolocationDesign h2{
+
+    .geolocationDesign h2 {
         font-size: 24px;
     }
 
-    
-    .ipResult{
+
+    .ipResult {
         overflow: auto;
         padding-left: 50px;
-        padding-right: 50px;        
+        padding-right: 50px;
         background-color: #B9CED1;
         /* font-s */
     }
 
-    .domainResult{
+    .domainResult {
         overflow: auto;
-        padding: 50px;
+        padding: 25px;
         background-color: #B9CED1;
     }
 
     .geolocation-table td {
         padding: 5px;
-        border: 2px solid #0f0900;
+        /* border: 1px solid #000000; */
         font-size: 14px;
+        width: 100px;
+        /* Set your desired width here */
+        word-wrap: break-word;
     }
-    
+
     .domain-info-table td {
         padding: 5px;
-        border: 1px solid #000000;
+        /* border: 1px solid #000000; */
         font-size: 14px;
-        width: 100px; /* Set your desired width here */
+        width: 100px;
+        /* Set your desired width here */
         word-wrap: break-word;
     }
 
 
-}   
+}
 
-@media (max-width: 500px){
+@media (max-width: 500px) {
 
     .logo {
         background-image: url('../pics/logo.png');
@@ -1081,18 +1165,22 @@ align-items: center; */
         height: 40px;
         width: 135px;
     }
-    .nav-language{
+
+    .nav-language {
         margin-right: 20px;
     }
+
     .hero-msg p {
         /* margin-top: 100px; */
         font-size: 22px;
         margin-bottom: 12px;
     }
-    .hero-msg h1{
+
+    .hero-msg h1 {
         font-size: 26px;
         margin-bottom: 12px;
     }
+
     .hero-section {
         background-size: cover;
         background-image: url("../pics/hero-img.jpg");
@@ -1110,16 +1198,17 @@ align-items: center; */
         margin-right: 20px;
         font-size: 19px;
     }
-    
+
     .footerIconsIn:hover {
         color: #bdd440;
         font-size: 20px;
     }
 
-    #foot-panel2{
+    #foot-panel2 {
         padding: 0px;
     }
-    .products-desc{
+
+    .products-desc {
         text-align: center;
     }
 
@@ -1128,7 +1217,7 @@ align-items: center; */
         margin-right: 10px;
         font-size: 30px;
     }
-    
+
     .about-hero-msg h1 {
         margin-top: 130px;
         color: #6aa12c;
@@ -1141,13 +1230,14 @@ align-items: center; */
 }
 
 @media (max-width:600px) {
-    #foot-panel2-col2{
+    #foot-panel2-col2 {
         display: none;
     }
 }
 
 
-@media (max-width: 900px){ 
+@media (max-width: 900px) {
+
     /* shop section  */
     .box {
         width: 40%;
@@ -1158,7 +1248,7 @@ align-items: center; */
     }
 }
 
-@media (max-width: 500px){ 
+@media (max-width: 500px) {
     .box {
         width: 100%;
         background-color: white;
@@ -1176,15 +1266,15 @@ align-items: center; */
         font-size: 15px;
     }
 
-    #teamh1{
+    #teamh1 {
         font-size: 26px;
     }
-    
-    .our-products h2{
+
+    .our-products h2 {
         font-size: 19px;
     }
 
-    .geolocationDesign h2{
+    .geolocationDesign h2 {
         font-size: 19px;
     }
 
@@ -1210,25 +1300,25 @@ align-items: center; */
         margin: 0 auto;
         /* height: 700px; */
     }
-    
+
     .pages a {
         text-decoration: none;
         color: white;
         margin: 10px;
         font-size: 11px;
     }
-    
+
     .pages a:hover {
         text-decoration: none;
         color: #bdd440;
         font-size: 12px;
     }
 
-    .endMargin{
+    .endMargin {
         font-size: 12px;
     }
 
-    .ipResult{
+    .ipResult {
         overflow: auto;
         padding-left: 25px;
         padding-right: 25px;
@@ -1236,27 +1326,27 @@ align-items: center; */
         /* font-s */
     }
 
-    .domainResult{
+    .domainResult {
         overflow: auto;
-        padding: 25px;
+        padding: 5px;
         background-color: #B9CED1;
     }
 
     .geolocation-table td {
         padding: 5px;
-        border: 2px solid #0f0900;
+        /* border: 1px solid #000000; */
         font-size: 12px;
     }
-    
+
     .domain-info-table td {
         padding: 5px;
-        border: 1px solid #000000;
+        /* border: 1px solid #000000; */
         font-size: 12px;
     }
 }
 
 
-@media (min-width: 800px){
+@media (min-width: 800px) {
     .navbar-toggler {
         display: none;
     }

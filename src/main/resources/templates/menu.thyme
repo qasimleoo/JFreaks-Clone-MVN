@@ -3,7 +3,13 @@
 
 <body>
         <div th:fragment="menu-inner-pages">
+
         <!--Java Script-->
+            <!-- Loader HTML -->
+            <div class="loader-overlay">
+                <div class="loader"></div>
+            </div>
+
             <div class="navbarBehind"></div>
             
             <div class="navbar">
@@ -44,10 +50,9 @@
                     </a>
                 </div>
                         
-                <a href="#" class="menu-bar">
+                <a href="#" class="menu-bar productsSelectUnderLineHide">
                     <i class="fa-solid fa-up-right-from-square" style="color: #bdd440;"></i>
                     <select onchange="location = this.value;" class="nav-second geoNavSelect" >
-
                         <option value="products.html">Products</option>
                         <option value="convertor.html">Currency Convertor</option>
                         <option value="whois.html">whois API</option>
@@ -125,8 +130,24 @@
 
             </div>
 
-        <script>            
+        <script>
 
+            // =-----------------------------------------------
+            // Loader 
+            document.addEventListener('DOMContentLoaded', function () {
+                // Show loader on page load
+                const loaderOverlay = document.querySelector('.loader-overlay');
+                loaderOverlay.style.display = 'flex';
+
+                // Hide loader and show content after a delay (Simulating page load)
+                setTimeout(function () {
+                    loaderOverlay.style.display = 'none';
+                    document.getElementById('content').style.display = 'block';
+                }, 2000); // Adjust the delay as needed, 2000ms = 2 seconds
+            });
+            
+            // -----------------------------------------------
+            // Toggle Button 
             const toggleButton = document.querySelector('.navbar-toggler');
             const toggleBar = document.querySelector('.overlay');
             const crossButton = document.querySelector('#crossMark');
@@ -215,6 +236,7 @@
         </script>
 
     </div>
+
 
 </body>
 </html>

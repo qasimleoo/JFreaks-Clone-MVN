@@ -9,39 +9,43 @@ og_image='../assets/pics/fav-icon.png'
 ~~~~~~
 <!-- content STARTS here  -->
 <section>
-    <!-- Add your homepage content here -->        
-    <div id="content">
-        <div class="geolocationDesign">
-            <h2 class="page-heading">IP Geolocation</h2>
-            <div class="geolocation">
-            <label for="ipAddress">IP Address:</label>
-            <input type="text" id="ipAddress" placeholder="Enter IP address">
+  <!-- Add your homepage content here -->
+  <div id="content">
+    <div class="geolocationDesign">
+      <h2 class="page-heading">IP Geolocation</h2>
+      <div class="geolocation">
+        <label for="ipAddress">IP Address:</label>
+        <input type="text" id="ipAddress" placeholder="Enter IP address">
 
-            <button onclick="geolocate()">Locate</button>
+        <button onclick="geolocate()">Locate</button>
 
-          </div>
-        </div>
-        <div id="ipResult" class="ipResult"></div>
+      </div>
     </div>
+    <div class="domainResultContainer">
+      <div class="innerDomainResultContainer">
+        <div id="ipResult" class="ipResult"></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <script>
-    
-// -----------------------------
-// IP geolocation
-function fetchGeolocation(ipAddress) {
+
+  // -----------------------------
+  // IP geolocation
+  function fetchGeolocation(ipAddress) {
     var apiKey = 'ddbd39aeb81e4095bc21e9cd86b38ed9';
-    
+
     var url = `https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}&ip=${ipAddress}`;
     return fetch(url).then(response => response.json());
   }
-  
+
 
   // ------------------------------------------
   // Perform IP geolocation
   function geolocate() {
     var ipAddress = document.getElementById('ipAddress').value;
-    
+
     // Fetch IP geolocation
     fetchGeolocation(ipAddress)
       .then(data => {
@@ -52,32 +56,32 @@ function fetchGeolocation(ipAddress) {
         console.log('Error fetching IP geolocation:', error);
       });
   }
-  
+
   // Display the IP geolocation result
   function displayGeolocationResult(data) {
     var resultDiv = document.getElementById('ipResult');
     resultDiv.innerHTML = '';
-  
+
     var table = document.createElement('table');
     table.classList.add('geolocation-table');
-  
+
     for (var key in data) {
       var row = document.createElement('tr');
       var keyCell = document.createElement('td');
       var valueCell = document.createElement('td');
-  
+
       keyCell.textContent = key;
       valueCell.textContent = data[key];
-  
+
       row.appendChild(keyCell);
       row.appendChild(valueCell);
-  
+
       table.appendChild(row);
     }
-  
+
     resultDiv.appendChild(table);
   }
-  
+
 // ------------------------------------------
 </script>
 <!-- content/section ENDS here  -->
