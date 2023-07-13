@@ -12,16 +12,16 @@ og_image='../assets/pics/fav-icon.png'
     <!-- Add your homepage content here -->        
     <div id="content">
         <div class="geolocationDesign">
-            <h2>IP Geolocation</h2>
+            <h2 class="page-heading">IP Geolocation</h2>
             <div class="geolocation">
             <label for="ipAddress">IP Address:</label>
             <input type="text" id="ipAddress" placeholder="Enter IP address">
 
             <button onclick="geolocate()">Locate</button>
 
-            <div id="result"></div>
-            </div>
+          </div>
         </div>
+        <div id="ipResult" class="ipResult"></div>
     </div>
 </section>
 
@@ -55,7 +55,7 @@ function fetchGeolocation(ipAddress) {
   
   // Display the IP geolocation result
   function displayGeolocationResult(data) {
-    var resultDiv = document.getElementById('result');
+    var resultDiv = document.getElementById('ipResult');
     resultDiv.innerHTML = '';
   
     var table = document.createElement('table');

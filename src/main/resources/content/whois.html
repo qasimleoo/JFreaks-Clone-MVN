@@ -13,16 +13,17 @@ og_image='../assets/pics/fav-icon.png'
     <!-- Add your homepage content here -->        
     <div id="content">
         <div class="geolocationDesign">
-            <h2>Domain Access (whoIsAPI)</h2>
+            <h2 class="page-heading">Domain Access (whoIsAPI)</h2>
             <div class="domain-access">
             <label for="domainName">Domain Name:</label>
             <input type="text" id="domainName" placeholder="Enter domain name">
 
             <button onclick="accessDomain()">Access</button>
-            <div id="domainResult"></div>
+          </div>
         </div>
-    </div>
-
+        <div class="domainResultContainer">
+          <div id="domainResult" class="domainResult"></div>
+        </div>
     </div>        
 </section>
 <!-- content/section ENDS here  -->

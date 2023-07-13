@@ -48,8 +48,7 @@
                     <i class="fa-solid fa-up-right-from-square" style="color: #bdd440;"></i>
                     <select onchange="location = this.value;" class="nav-second geoNavSelect" >
 
-                        <option value="#">Products</option>
-                        <option value="products.html">Page</option>
+                        <option value="products.html">Products</option>
                         <option value="convertor.html">Currency Convertor</option>
                         <option value="whois.html">whois API</option>
                         <option value="ipLocation.html">ip Location Tracker</option>
@@ -67,15 +66,79 @@
                     </select>
                 </div>
 
-                <div class="navbar-toggler" onclick="toggleMenu()">
+                <div class="navbar-toggler">
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
                 </div>
 
+                <div class="overlay" id="overlay">
+                    <i class="fa-solid fa-xmark" id="crossMark" style="color: #bbdd41; font-size: 32px;"></i>
+                    <br>
+                    <div class= "overlay-link-1">
+                        <a th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')" th:href="${rootpath}+'index.html'" class="otherPagesToggle">
+                            <i class="fa-solid fa-house" style="color: #bdd440;"></i>
+                            <p>Home</p>
+                        </a>
+                    </a>
+                    </div>
+                    <hr>
+                    <div class= "overlay-link-1">
+                        <a th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')" th:href="${rootpath}+'products.html'" class="otherPagesToggle">
+                            <i class="fa-solid fa-up-right-from-square" style="color: #bdd440;"></i>
+                            <p>Products</p>
+                        </a>
+                    </div>
+                    <hr>
+                    <div class= "overlay-link-1">
+                        <a th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')" th:href="${rootpath}+'about.html'" class="otherPagesToggle">
+                            <i class="fa-solid fa-users" style="color: #bdd440;"></i>
+                            <p>About Us</p>
+                        </a>
+                    </div>
+                    <hr>
+                    <div class= "overlay-link-1">
+                        <a th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')" th:href="${rootpath}+'ipLocation.html'" class="otherPagesToggle">
+                            <i class="fa-solid fa-globe" style="color: #bdd440;"></i>
+                            <p>IP Tracker</p>
+                        </a>
+                    </div>
+                    <hr>
+                    <div class= "overlay-link-1">
+                        <a th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')" th:href="${rootpath}+'whois.html'" class="otherPagesToggle">
+                            <i class="fa-solid fa-terminal" style="color: #bdd440;"></i>
+                            <p>Domain Detailer</p>
+                        </a>
+                    </div>
+                    <hr>
+                    <div class= "overlay-link-1">
+                        <a th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')" th:href="${rootpath}+'convertor.html'" class="otherPagesToggle">
+                            <i class="fa-solid fa-money-bill-transfer" style="color: #bdd440;"></i>
+                            <p>Currency Convertor</p>
+                        </a>
+                    </div>
+                    <hr>
+                    
+                </div>
+                
+            
+
             </div>
 
         <script>            
+
+            const toggleButton = document.querySelector('.navbar-toggler');
+            const toggleBar = document.querySelector('.overlay');
+            const crossButton = document.querySelector('#crossMark');
+
+            toggleButton.addEventListener('click', () => {
+                toggleBar.classList.toggle('open');
+            });
+
+            crossButton.addEventListener('click', () => {
+                toggleBar.classList.toggle('open');
+            });
+
             // ------------------------------------
             // Search Function 
             function searchAndHighlight() {
@@ -148,11 +211,6 @@
             // ------------------------------------
 
             // ---------------------------------
-            // Toggler 
-            function toggleMenu() {
-                var menu = document.querySelector('.menu');
-                menu.classList.toggle('active');
-            }
 
         </script>
 
