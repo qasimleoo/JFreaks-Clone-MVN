@@ -1,16 +1,22 @@
-Step 1: We place all the JBake files in src/main/resources directory
-Step 2: Then we run the following command to Bake as well as minify the CSS and JS code
-        $ mvn jbake:generate;mvn yuicompressor:compress
-Step 3: All the output will be generated in the target folder
-Step 4: Copy the target folder and place in the NGinX server. We can rename this target folder if we have mentioned another name in the NGinX's config file.
-In other words, this target folder is treated as output folder in JBake.
+## baking ##
+use following command to bake  
+`mvn jbake:generate`  
+## minification ##
+there are separate plugins for jbake-maven build and for minification
+and different commands will be used to bake and minify. minification is not the part of jbake lifecycle.
+So, always run commands of baking first then minify the static assets.If we run minify command and then bake, static 
+assets will not be minified.Following command will be used to minify css:  
+`mvn yuicompressor:compress`  
+In order to minify js files, use following command  
+`mvn closure-compiler:minify`  
+## Live Server ##
+following command will bake and run on server at port 8820. static files will not be minified.  
+`mvn jbake:inline`  
+Further you can read on [Github](https://github.com/jbake-org/jbake-maven-plugin)  
 
-Note: Our original CSS and JS won't be minified, because the above command will generate the output pages
-      and minify the CSS and JS only in the target (output) folder.
-
----------------------------------------------------------------------------
-
-In this project, we have two plug-ins. So, the above command is the combination of the two operations.
-One will bake the project and other will minify the CSS and JS code.
+## build Folder ##
+all outputs of build are in `target` folder which is in project root path and maven default build directory.
+so,if maven lifecycle commands will also work but could make conflicts in generating output. So, try to run only
+commands which are mentioned here. we can delete target folder by `mvn clean` command.  
 
 
